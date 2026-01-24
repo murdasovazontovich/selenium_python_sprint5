@@ -14,4 +14,5 @@ Selenium UI tests for Stellar Burgers
 - Python 3.9+
 - Selenium WebDriver
 - pytest
-- Google Chrome / ChromeDriver
+- Google Chrome / ChromeDriver 
+# Completed: Sat Jan 24 21:37:32 +05 2026
