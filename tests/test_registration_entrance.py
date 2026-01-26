@@ -84,36 +84,3 @@ class TestRegistration:
         driver.find_element(*Locators.LOGIN_BUTTON).click()
         
         assert WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.MAKE_ORDER))
-
-
-
-              
-
-
-
-
-
-          
-
-    
-
-
-
-        
-
-        
-
-        
-
-
-
-
-
-        
-
-
-
-
-
-
-
