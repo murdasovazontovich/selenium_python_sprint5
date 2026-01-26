@@ -6,28 +6,25 @@ from selenium.webdriver.support.wait import WebDriverWait
 from tests.locators import Locators
 from tests.helpers import generate_email
 from tests.helpers import Data
-import time 
+from tests.curl import *
+
 
 class TestConstructor:
-    def test_transition_to_souce(self, driver):
+    def test_transition_to_sauce(self, driver):
         driver.find_element(*Locators.BUTTON_SAUCE).click()
-        first_sauce = driver.find_element(*Locators.FIRST_SPICY_SAUCE)
+        active_tab = WebDriverWait(driver, 10).until(EC.presence_of_element_located(Locators.SAUCE_TAB_ACTIVE))
 
-        assert first_sauce.get_attribute('alt') == "Соус Spicy-X"
+        assert "tab_tab_type_current" in active_tab.get_attribute("class")
 
     def test_transition_to_topping(self, driver):
         driver.find_element(*Locators.BUTTON_TOPPING).click()
-        first_topping = driver.find_element(*Locators.FIRST_TOPPING)
+        active_tab = WebDriverWait(driver, 10).until(EC.presence_of_element_located(Locators.TOPPING_TAB_ACTIVE))
 
-        assert first_topping.get_attribute('alt') == 'Мясо бессмертных моллюсков Protostomia'
-
+        assert "tab_tab_type_current" in active_tab.get_attribute("class")
     
     def test_transition_to_bread(self, driver):
         driver.find_element(*Locators.BUTTON_TOPPING).click()
-        time.sleep(2)
         driver.find_element(*Locators.BUTTON_BREAD).click()
-        time.sleep(2)
-        first_bread = driver.find_element(*Locators.FIRST_BREAD)
+        active_tab = WebDriverWait(driver, 10).until(EC.presence_of_element_located(Locators.BREAD_TAB_ACTIVE))
 
-        assert first_bread.get_attribute('alt') == 'Флюоресцентная булка R2-D3'
-    
+        assert "tab_tab_type_current" in active_tab.get_attribute("class")

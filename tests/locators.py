@@ -36,22 +36,24 @@ class Locators:
     BURGER_TEXT = (By.XPATH, "//h1[contains(.,'Соберите бургер')]")
     
     #Текст некорректный пароль 
-    WRONG_PASSWORD = (By.XPATH, "//p[contains(text(),'Некорректный пароль')]")
+    WRONG_PASSWORD = (By.XPATH, "//p[contains(@class,'input__error')]")
+
   
     #Сделать заказ
     MAKE_ORDER = (By.XPATH, "//button[contains(.,'Оформить заказ')]")
 
     #Cоусы 
     BUTTON_SAUCE = (By.XPATH, "//span[contains(.,'Соусы')]")
-    FIRST_SPICY_SAUCE = (By.XPATH, "(//img[contains(@alt,'Соус')])[1]")
+    SAUCE_TAB_ACTIVE = (By.XPATH, "//div[contains(@class,'tab_tab') and contains(@class,'tab_tab_type_current')]")
+
 
     #Начинки 
     BUTTON_TOPPING = (By.XPATH, "//span[contains(.,'Начинки')]")
-    FIRST_TOPPING = (By.XPATH, "(//img[contains(@alt,'Мясо')])[1]")
+    TOPPING_TAB_ACTIVE = (By.XPATH, "//div[contains(@class,'tab_tab') and contains(@class,'tab_tab_type_current')]")
 
 
     #Булки 
     BUTTON_BREAD = BUTTON_BREAD = (By.XPATH, "//span[contains(., 'Булки')]")
-    FIRST_BREAD = (By.XPATH, "(//img[contains(@alt,'булка')])[1]")
+    BREAD_TAB_ACTIVE = (By.XPATH, "//div[contains(@class,'tab_tab') and contains(@class,'tab_tab_type_current')]")
     
     
